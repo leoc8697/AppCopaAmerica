@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/selectCalendar"
+        android:alphabeticShortcut="a"
+        android:numericShortcut="0"
+        android:title="@string/calendar"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/selectMatches"
+        android:alphabeticShortcut="r"
+        android:numericShortcut="1"
+        android:title="@string/matches"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/selectTeams"
+        android:alphabeticShortcut="r"
+        android:numericShortcut="1"
+        android:title="@string/teams"
+        app:showAsAction="always"></item>
+</menu>

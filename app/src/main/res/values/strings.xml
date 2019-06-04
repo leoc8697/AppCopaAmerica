@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AppCopaAmerica</string>
+    <string name="calendar">Calendario</string>
+    <string name="positions">Posiciones</string>
+    <string name="teams">Equipos</string>
 </resources>
