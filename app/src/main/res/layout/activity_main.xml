@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#0F5302"
+        android:background="@color/colorLogoToolbar"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -36,23 +36,24 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="103dp"
-        android:layout_height="86dp"
+        android:layout_width="75dp"
+        android:layout_height="53dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/text_toolbar_foreground" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#020230"
+        android:background="@color/colorButtonsToolbar"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,44 +63,49 @@
         app:layout_constraintVertical_bias="0.0"
         app:titleMargin="0dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="133dp"
-        android:layout_height="56dp"
-        android:background="#02021E"
-        android:freezesText="true"
-        android:text="@string/calendar"
-        android:textColor="#FBFBFD"
-        android:textColorLink="#00FA0505"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="142dp"
-        android:layout_height="56dp"
-        android:background="#02021E"
-        android:text="@string/positions"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="138dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:background="#02021E"
-        android:text="@string/teams"
-        android:textColor="#FDFCFC"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2">
+
+        <Button
+            android:id="@+id/buttonCalendar"
+            android:layout_width="136dp"
+            android:layout_height="40dp"
+            android:background="@color/colorButtonsToolbar"
+            android:freezesText="true"
+            android:text="@string/calendar"
+            android:textColor="@color/colorTextButtonToolbar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+        <Button
+            android:id="@+id/buttonPositions"
+            android:layout_width="136dp"
+            android:layout_height="40dp"
+            android:background="@color/colorButtonsToolbar"
+            android:freezesText="true"
+            android:text="@string/positions"
+            android:textColor="@color/colorTextButtonToolbar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+        <Button
+            android:id="@+id/buttonTeams"
+            android:layout_width="136dp"
+            android:layout_height="40dp"
+            android:background="@color/colorButtonsToolbar"
+            android:freezesText="true"
+            android:text="@string/teams"
+            android:textColor="@color/colorTextButtonToolbar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
