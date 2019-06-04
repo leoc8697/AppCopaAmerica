@@ -45,10 +45,9 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@mipmap/text_toolbar_foreground" />
 
 </android.support.constraint.ConstraintLayout>
