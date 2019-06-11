@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorLogoToolbar">#0F5302</color>
-    <color name="colorButtonsToolbar">#04043A</color>
     <color name="colorTextButtonToolbar">#ffffff</color>
+    <color name="colorButtonsToolbar">#04043A</color>
 </resources>
