@@ -16,9 +16,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerViewMatch;
-    private RecyclerViewAdapter adapterMatch;
-
     private TabLayout tabLayout;
     public ViewPager viewPager;
 
@@ -34,24 +31,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        //Vinculamos nuestra instancia recycler view
-        recyclerViewMatch = (RecyclerView)findViewById(R.id.recyclerMatch);
-        recyclerViewMatch.setLayoutManager(new LinearLayoutManager(this));
-
-        //Aquí asignamos toda la info de nuestro recycler view en nuestro layout
-        adapterMatch= new RecyclerViewAdapter(getMatchs());
-        recyclerViewMatch.setAdapter(adapterMatch);
-
-    }
-
-    public List<MatchModel> getMatchs(){
-
-        List<MatchModel> match=new ArrayList<>();
-        match.add(new MatchModel("Brasil", "Bolivia", "Hora", "Viernes 14 Junio",R.drawable.logo,R.drawable.logo));
-        match.add(new MatchModel("Brasil2", "Bolivia2", "Hora2", "Viernes2",R.drawable.logo,R.drawable.logo));
-        //match.add(new MatchModel("Brasil3", "Hora3", "Bolivia3", "Viernes3",R.drawable.br,R.drawable.bo));
-
-        return match;
     }
 
     private void setupViewPager(ViewPager viewPager) {
