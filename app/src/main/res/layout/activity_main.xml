@@ -45,7 +45,8 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/text_toolbar_foreground" />
+        app:srcCompat="@mipmap/text_toolbar_foreground"
+        android:layout_marginRight="8dp" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"

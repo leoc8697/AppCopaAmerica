@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CalendarFragment extends Fragment {
 
@@ -40,8 +39,8 @@ public class CalendarFragment extends Fragment {
     public ArrayList<MatchModel> getMatchs(){
 
         ArrayList<MatchModel> matches = new ArrayList<>();
-        matches.add(new MatchModel("Brasil", "Bolivia", "Hora", "  Viernes 14 Junio", R.mipmap.brasil_round, R.mipmap.bolivia_round));
-        matches.add(new MatchModel("Brasil2", "Bolivia2", "Hora2", "  Viernes2", R.mipmap.brasil_round, R.mipmap.bolivia_round));
+        matches.add(new MatchModel("Brasil", "Bolivia", "Hora", "   Viernes 14 Junio", R.mipmap.brasil_round, R.mipmap.bolivia_round));
+        matches.add(new MatchModel("Brasil2", "Bolivia2", "Hora2", "   Viernes2", R.mipmap.brasil_round, R.mipmap.bolivia_round));
         //match.add(new MatchModel("Brasil3", "Hora3", "Bolivia3", "Viernes3",R.drawable.br,R.drawable.bo));
 
         return matches;

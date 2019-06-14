@@ -5,6 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorLogoToolbar">#0F5302</color>
     <color name="colorButtonsToolbar">#04043A</color>
-    <color name="colorTextButtonToolbar">#ffffff</color>
+    <color name="colorButtonsSecondToolbar">#000007</color>
     <color name="colorBarDateMatch">#B0041601</color>
 </resources>

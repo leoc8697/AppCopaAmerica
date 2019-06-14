@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
     tools:context=".PositionsFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:background="#0C6194"
-        android:textColor="#fff"
-        android:text="2. Two" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/subtabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorButtonsSecondToolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.0"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabSelectedTextColor="#fff"
+            app:tabTextColor="#fff"
+            app:titleMargin="0dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewsubpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@+id/tabs"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-2dp" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
