@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,14 +10,15 @@
     android:layout_marginBottom="8dp"
     android:background="@drawable/degrade"
     tools:context=".CalendarFragment">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerMatch"
+    
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:itemCount="@layout/item_match"
-        tools:listitem="@layout/item_match">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    </android.support.v7.widget.RecyclerView>
-
-</RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

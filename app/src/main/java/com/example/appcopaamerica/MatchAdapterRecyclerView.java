@@ -25,7 +25,7 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
     @Override
     public MatchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //El siguiente paso es inflar, que significa hacer uso de un layout dentro de otro layout.
-        View view= LayoutInflater.from(parent.getContext()).inflate(resource, parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_match, parent,false);
         return new MatchViewHolder(view);
     }
 
@@ -33,13 +33,13 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
     //El metodo onBindViewHolder realiza las verificaciones del contenido para cada item.
     @Override
     public void onBindViewHolder(MatchViewHolder holder, int position) {
-
-        holder.team1.setText(matches.get(position).getTeam1());
-        holder.team2.setText(matches.get(position).getTeam2());
-        holder.score.setText(matches.get(position).getScore());
-        holder.dateMatch.setText(matches.get(position).getDateMatch());
-        //holder.flagTeam1.setImageResource(matches.get(position).getFlagTeam1());
-        //holder.flagTeam2.setImageResource(matches.get(position).getFlagTeam2());
+        MatchModel match = matches.get(position);
+        holder.team1.setText(match.getTeam1());
+        holder.team2.setText(match.getTeam2());
+        holder.score.setText(match.getScore());
+        holder.dateMatch.setText(match.getDateMatch());
+        holder.flagTeam1.setImageResource(match.getFlagTeam1());
+        holder.flagTeam2.setImageResource(match.getFlagTeam2());
     }
 
     //El siguiente metodo permita configurar al adaptador la cantidad de elementos que se procesarán.
@@ -53,17 +53,17 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
     public class MatchViewHolder extends RecyclerView.ViewHolder{
 
         private TextView team1, team2, score, dateMatch;
-       // ImageView flagTeam1,flagTeam2;
+        ImageView flagTeam1,flagTeam2;
 
         public MatchViewHolder(View itemView) {
             super(itemView);
 
-            team1     = (TextView) itemView.findViewById(R.id.textTeam1);
-            team2     = (TextView) itemView.findViewById(R.id.textTeam2);
-            score     = (TextView) itemView.findViewById(R.id.textScore);
-            dateMatch = (TextView) itemView.findViewById(R.id.textDateMatch);
-           // flagTeam1 = (ImageView)itemView.findViewById(R.id.imgTeam1);
-           // flagTeam2 = (ImageView)itemView.findViewById(R.id.imgTeam2);
+            team1     = (TextView)  itemView.findViewById(R.id.textTeam1);
+            team2     = (TextView)  itemView.findViewById(R.id.textTeam2);
+            score     = (TextView)  itemView.findViewById(R.id.textScore);
+            dateMatch = (TextView)  itemView.findViewById(R.id.textDateMatch);
+            flagTeam1 = (ImageView) itemView.findViewById(R.id.imgTeam1);
+            flagTeam2 = (ImageView) itemView.findViewById(R.id.imgTeam2);
         }
     }
 }

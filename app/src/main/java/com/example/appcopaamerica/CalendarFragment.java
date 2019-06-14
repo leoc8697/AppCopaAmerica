@@ -31,7 +31,7 @@ public class CalendarFragment extends Fragment {
         recyclerViewMatch.setLayoutManager(linearLayoutManager);
 
         //Aquí asignamos toda la info de nuestro recycler view en nuestro layout
-        MatchAdapterRecyclerView adapterMatch= new MatchAdapterRecyclerView(getMatchs(),R.layout.item_match, getActivity());
+        MatchAdapterRecyclerView adapterMatch= new MatchAdapterRecyclerView(getMatchs(), R.layout.item_match, getActivity());
         recyclerViewMatch.setAdapter(adapterMatch);
 
         return view;
@@ -40,8 +40,8 @@ public class CalendarFragment extends Fragment {
     public ArrayList<MatchModel> getMatchs(){
 
         ArrayList<MatchModel> matches = new ArrayList<>();
-        matches.add(new MatchModel("Brasil", "Bolivia", "Hora", "Viernes 14 Junio"));
-        matches.add(new MatchModel("Brasil2", "Bolivia2", "Hora2", "Viernes2"));//,R.mipmap.brasil_foreground,R.mipmap.bolivia_foreground));
+        matches.add(new MatchModel("Brasil", "Bolivia", "Hora", "  Viernes 14 Junio", R.mipmap.brasil_round, R.mipmap.bolivia_round));
+        matches.add(new MatchModel("Brasil2", "Bolivia2", "Hora2", "  Viernes2", R.mipmap.brasil_round, R.mipmap.bolivia_round));
         //match.add(new MatchModel("Brasil3", "Hora3", "Bolivia3", "Viernes3",R.drawable.br,R.drawable.bo));
 
         return matches;

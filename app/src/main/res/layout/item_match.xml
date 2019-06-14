@@ -1,82 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_margin="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="6dp"
-        android:foreground="@drawable/degrade">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textDateMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBarDateMatch"
+            android:textColor="#F0F7E811" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgTeam1"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="2dp"
+                android:scaleX="0.8"
+                android:scaleY="0.7" />
 
             <TextView
-                android:id="@+id/textDateMatch"
-                android:layout_width="match_parent"
+                android:id="@+id/textTeam1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorBarDateMatch"
-                android:textColor="#F0F7E811" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textScore"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textTeam2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-                <ImageView
-                    android:id="@+id/imgTeam1"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="fitXY"
-                    android:scaleX="1"
-                    android:scaleY="1.5" />
+            <ImageView
+                android:id="@+id/imgTeam2"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="2dp"
+                android:scaleX="0.8"
+                android:scaleY="0.7" />
 
-                <TextView
-                    android:id="@+id/textTeam1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="51dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textTeam2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/imgTeam2"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="fitXY"
-                    android:scaleX="1"
-                    android:scaleY="1.5" />
-
-            </LinearLayout>
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
+</FrameLayout>
 
-</RelativeLayout>
+
