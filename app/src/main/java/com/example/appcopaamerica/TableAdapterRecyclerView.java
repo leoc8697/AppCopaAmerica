@@ -23,17 +23,17 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
     }
 
     @Override
-    public TableAdapterRecyclerView.TableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //El siguiente paso es inflar, que significa hacer uso de un layout dentro de otro layout.
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_match, parent,false);
-        return new TableAdapterRecyclerView.TableViewHolder(view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_position, parent,false);
+        return new TableViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(TableAdapterRecyclerView.TableViewHolder holder, int position) {
+    public void onBindViewHolder(TableViewHolder holder, int position) {
         TableModel table = tables.get(position);
         holder.nameGroup.setText(table.getNameGroup());
-        holder.infoGroup.setText(table.getInfoGroup());
+        //holder.infoGroup.setText(table.getInfoGroup());
         holder.position1.setText(table.getPosition1());
         holder.position2.setText(table.getPosition2());
         holder.position3.setText(table.getPosition3());
@@ -71,7 +71,7 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
 
     public class TableViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView nameGroup, infoGroup, position1, position2, position3, position4,
+        private TextView nameGroup, position1, position2, position3, position4,
                 namePosition1, namePosition2, namePosition3, namePosition4,
                 pj1, pj2, pj3, pj4, goals1, goals2, goals3, goals4,
                 difGoal1, difGoal2, difGoal3, difGoal4, pts1, pts2, pts3, pts4;
@@ -81,7 +81,7 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
             super(itemView);
 
             nameGroup     = (TextView)  itemView.findViewById(R.id.textGroup);
-            infoGroup     = (TextView)  itemView.findViewById(R.id.textInfoGroup);
+            //infoGroup     = (TextView)  itemView.findViewById(R.id.textInfoGroup);
             position1     = (TextView)  itemView.findViewById(R.id.textPos1);
             position2     = (TextView)  itemView.findViewById(R.id.textPos2);
             position3     = (TextView)  itemView.findViewById(R.id.textPos3);

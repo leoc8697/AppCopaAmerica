@@ -3,7 +3,6 @@
     <string name="calendar">Calendario</string>
     <string name="positions">Posiciones</string>
     <string name="teams">Equipos</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">  Pos.                                           PJ        Gol       Dif.       Pts</string>
+    <string name="infoGroup">  Pos.        PJ  Gol  Dif.      Pts</string>
 </resources>
