@@ -4,11 +4,11 @@ public class TableModel {
 
     private String  nameGroup, infoGroup, position1, position2, position3, position4,
                     namePosition1, namePosition2, namePosition3, namePosition4,
-                    pj1, pj2, pj3, pj4, goles1, goles2, goles3, goles4,
-                    difGol1, difGol2, difGol3, difGol4, pts1, pts2, pts3, pts4;
+                    pj1, pj2, pj3, pj4, goals1, goals2, goals3, goals4,
+                    difGoal1, difGoal2, difGoal3, difGoal4, pts1, pts2, pts3, pts4;
     private int imgPos1, imgPos2, imgPos3, imgPos4;
 
-    public TableModel(String nameGroup, String infoGroup, String position1, String position2, String position3, String position4, String namePosition1, String namePosition2, String namePosition3, String namePosition4, String pj1, String pj2, String pj3, String pj4, String goles1, String goles2, String goles3, String goles4, String difGol1, String difGol2, String difGol3, String difGol4, String pts1, String pts2, String pts3, String pts4, int imgPos1, int imgPos2, int imgPos3, int imgPos4) {
+    public TableModel(String nameGroup, String infoGroup, String position1, String position2, String position3, String position4, String namePosition1, String namePosition2, String namePosition3, String namePosition4, String pj1, String pj2, String pj3, String pj4, String goals1, String goals2, String goals3, String goals4, String difGoal1, String difGoal2, String difGoal3, String difGoal4, String pts1, String pts2, String pts3, String pts4, int imgPos1, int imgPos2, int imgPos3, int imgPos4) {
         this.nameGroup = nameGroup;
         this.infoGroup = infoGroup;
         this.position1 = position1;
@@ -23,14 +23,14 @@ public class TableModel {
         this.pj2 = pj2;
         this.pj3 = pj3;
         this.pj4 = pj4;
-        this.goles1 = goles1;
-        this.goles2 = goles2;
-        this.goles3 = goles3;
-        this.goles4 = goles4;
-        this.difGol1 = difGol1;
-        this.difGol2 = difGol2;
-        this.difGol3 = difGol3;
-        this.difGol4 = difGol4;
+        this.goals1 = goals1;
+        this.goals2 = goals2;
+        this.goals3 = goals3;
+        this.goals4 = goals4;
+        this.difGoal1 = difGoal1;
+        this.difGoal2 = difGoal2;
+        this.difGoal3 = difGoal3;
+        this.difGoal4 = difGoal4;
         this.pts1 = pts1;
         this.pts2 = pts2;
         this.pts3 = pts3;
@@ -153,68 +153,68 @@ public class TableModel {
         this.pj4 = pj4;
     }
 
-    public String getGoles1() {
-        return goles1;
+    public String getGoals1() {
+        return goals1;
     }
 
-    public void setGoles1(String goles1) {
-        this.goles1 = goles1;
+    public void setGoals1(String goals1) {
+        this.goals1 = goals1;
     }
 
-    public String getGoles2() {
-        return goles2;
+    public String getGoals2() {
+        return goals2;
     }
 
-    public void setGoles2(String goles2) {
-        this.goles2 = goles2;
+    public void setGoals2(String goals2) {
+        this.goals2 = goals2;
     }
 
-    public String getGoles3() {
-        return goles3;
+    public String getGoals3() {
+        return goals3;
     }
 
-    public void setGoles3(String goles3) {
-        this.goles3 = goles3;
+    public void setGoals3(String goals3) {
+        this.goals3 = goals3;
     }
 
-    public String getGoles4() {
-        return goles4;
+    public String getGoals4() {
+        return goals4;
     }
 
-    public void setGoles4(String goles4) {
-        this.goles4 = goles4;
+    public void setGoals4(String goals4) {
+        this.goals4 = goals4;
     }
 
-    public String getDifGol1() {
-        return difGol1;
+    public String getDifGoal1() {
+        return difGoal1;
     }
 
-    public void setDifGol1(String difGol1) {
-        this.difGol1 = difGol1;
+    public void setDifGoal1(String difGoal1) {
+        this.difGoal1 = difGoal1;
     }
 
-    public String getDifGol2() {
-        return difGol2;
+    public String getDifGoal2() {
+        return difGoal2;
     }
 
-    public void setDifGol2(String difGol2) {
-        this.difGol2 = difGol2;
+    public void setDifGoal2(String difGoal2) {
+        this.difGoal2 = difGoal2;
     }
 
-    public String getDifGol3() {
-        return difGol3;
+    public String getDifGoal3() {
+        return difGoal3;
     }
 
-    public void setDifGol3(String difGol3) {
-        this.difGol3 = difGol3;
+    public void setDifGoal3(String difGoal3) {
+        this.difGoal3 = difGoal3;
     }
 
-    public String getDifGol4() {
-        return difGol4;
+    public String getDifGoal4() {
+        return difGoal4;
     }
 
-    public void setDifGol4(String difGol4) {
-        this.difGol4 = difGol4;
+    public void setDifGoal4(String difGoal4) {
+        this.difGoal4 = difGoal4;
     }
 
     public String getPts1() {
