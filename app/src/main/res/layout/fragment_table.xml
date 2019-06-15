@@ -16,10 +16,13 @@
         android:background="#090CDD"
         android:orientation="vertical">
 
-        <TextView
+        <include layout="@layout/item_position"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerPosition"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TABLAS DE POSICIONES"/>
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -6,5 +6,9 @@
     <color name="colorLogoToolbar">#0F5302</color>
     <color name="colorButtonsToolbar">#04043A</color>
     <color name="colorButtonsSecondToolbar">#000007</color>
+    <color name="colorTextBarItems">#F0F7E811</color>
     <color name="colorBarDateMatch">#B0041601</color>
+    <color name="colorBarGroup">#AE084201</color>
+    <color name="colorBarInfoGroup">#C01D2E1A</color>
+
 </resources>
