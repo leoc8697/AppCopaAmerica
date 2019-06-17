@@ -6,9 +6,9 @@ public class TableModel {
                     namePosition1, namePosition2, namePosition3, namePosition4,
                     pj1, pj2, pj3, pj4, goals1, goals2, goals3, goals4,
                     difGoal1, difGoal2, difGoal3, difGoal4, pts1, pts2, pts3, pts4;
-    private int imgPos1, imgPos2, imgPos3, imgPos4;
+    //private int imgPos1, imgPos2, imgPos3, imgPos4;
 
-    public TableModel(String nameGroup, String position1, String position2, String position3, String position4, String namePosition1, String namePosition2, String namePosition3, String namePosition4, String pj1, String pj2, String pj3, String pj4, String goals1, String goals2, String goals3, String goals4, String difGoal1, String difGoal2, String difGoal3, String difGoal4, String pts1, String pts2, String pts3, String pts4, int imgPos1, int imgPos2, int imgPos3, int imgPos4) {
+    public TableModel(String nameGroup, String position1, String position2, String position3, String position4, String namePosition1, String namePosition2, String namePosition3, String namePosition4, String pj1, String pj2, String pj3, String pj4, String goals1, String goals2, String goals3, String goals4, String difGoal1, String difGoal2, String difGoal3, String difGoal4, String pts1, String pts2, String pts3, String pts){//4, int imgPos1, int imgPos2, int imgPos3, int imgPos4) {
         this.nameGroup = nameGroup;
         //this.infoGroup = infoGroup;
         this.position1 = position1;
@@ -35,10 +35,12 @@ public class TableModel {
         this.pts2 = pts2;
         this.pts3 = pts3;
         this.pts4 = pts4;
+        /*
         this.imgPos1 = imgPos1;
         this.imgPos2 = imgPos2;
         this.imgPos3 = imgPos3;
         this.imgPos4 = imgPos4;
+        */
     }
 
     public String getNameGroup() {
@@ -248,7 +250,7 @@ public class TableModel {
     public void setPts4(String pts4) {
         this.pts4 = pts4;
     }
-
+/*
     public int getImgPos1() {
         return imgPos1;
     }
@@ -280,4 +282,5 @@ public class TableModel {
     public void setImgPos4(int imgPos4) {
         this.imgPos4 = imgPos4;
     }
+    */
 }
