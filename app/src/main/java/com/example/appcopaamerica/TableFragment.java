@@ -38,6 +38,7 @@ public class TableFragment extends Fragment {
     public ArrayList<TableModel> getTables(){
 
         ArrayList<TableModel> tables = new ArrayList<>();
+       /*
         tables.add(new TableModel("  Grupo A", "1.", "2.", "3.",
                 "4.", "Primero", "Segundo", "Tercero", "Cuarto",
                 "3", "2", "2", "2", "10:1", "7:3", "4:4", "1:8", "+9",
@@ -49,7 +50,7 @@ public class TableFragment extends Fragment {
                 "3", "2", "2", "2", "10:1", "7:3", "4:4", "1:8", "+9",
                 "+4", "0","-7", "9", "6", "3", "0", R.mipmap.colombia_round,
                 R.mipmap.argentina_round, R.mipmap.qatar_round, R.mipmap.paraguay_round));
-
+*/
         return tables;
     }
 

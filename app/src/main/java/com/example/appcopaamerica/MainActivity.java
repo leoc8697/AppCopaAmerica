@@ -1,6 +1,7 @@
 package com.example.appcopaamerica;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    String dir = Environment.getExternalStorageDirectory().getAbsolutePath();
+    //String dir = "/mnt/sdcard-ext" ;
 
     private TabLayout tabLayout;
     public ViewPager viewPager;

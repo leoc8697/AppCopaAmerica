@@ -45,6 +45,8 @@ public class JsonMatchParser {
         String team2 = null;
         String score = null;
         String dateMatch = null;
+        String flagTeam1 = null;
+        String flagTeam2 = null;
 
         // Iniciar objeto
         reader.beginObject();
@@ -67,13 +69,19 @@ public class JsonMatchParser {
                 case "dateMatch":
                     dateMatch = reader.nextString();
                     break;
+                case "flagTeam1":
+                    flagTeam1 = reader.nextString();
+                    break;
+                case "flagTeam2":
+                    flagTeam2 = reader.nextString();
+                    break;
                 default:
                     reader.skipValue();
                     break;
             }
         }
         reader.endObject();
-        return new MatchModel(team1, team2, score, dateMatch);
+        return new MatchModel(team1, team2, score, dateMatch, flagTeam1, flagTeam2);
     }
 
 }

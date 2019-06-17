@@ -31,6 +31,7 @@ import static android.support.constraint.Constraints.TAG;
 public class CalendarFragment extends Fragment {
 
 
+
     // Required empty public constructor
     ArrayList<MatchModel> matchesList = new ArrayList<>();
     MatchAdapterRecyclerView adapterMatch;
@@ -55,7 +56,7 @@ public class CalendarFragment extends Fragment {
 
 
         //Aquí asignamos toda la info de nuestro recycler view en nuestro layout
-        adapterMatch = new MatchAdapterRecyclerView(matchesList, R.layout.item_match, getActivity());
+        adapterMatch = new MatchAdapterRecyclerView(matchesList, R.layout.item_match, getActivity(), getActivity().getApplicationContext());
         recyclerViewMatch.setAdapter(adapterMatch);
 
 
@@ -85,7 +86,7 @@ public class CalendarFragment extends Fragment {
         }
         */
     }
-
+/*
     public ArrayList<MatchModel> getMatchs(){
 
         ArrayList<MatchModel> matches = new ArrayList<>();
@@ -95,6 +96,7 @@ public class CalendarFragment extends Fragment {
 
         return matches;
     }
+    */
 
 private void getMatchParsed()
 
@@ -106,7 +108,10 @@ private void getMatchParsed()
                 ArrayList<MatchModel> matches = null;
 
                 try {
-                    URL url = new URL("https://api.myjson.com/bins/1eqw2d");
+                    //URL Json only text.
+                    //URL url = new URL("https://api.myjson.com/bins/1eqw2d");
+                    //URL Json text and images.
+                    URL url = new URL("https://api.myjson.com/bins/jgmjh");
                     // Create a new HTTP URL connection
                     URLConnection connection = url.openConnection();
                     HttpURLConnection httpConnection = (HttpURLConnection) connection;
@@ -120,7 +125,7 @@ private void getMatchParsed()
                     }
                     else{
                         matches = new ArrayList<>();
-                        matches.add(new MatchModel(null, null, null, null));
+                        matches.add(new MatchModel(null, null, null, null, null, null));
                     }
                     httpConnection.disconnect();
                 } catch (MalformedURLException e) {

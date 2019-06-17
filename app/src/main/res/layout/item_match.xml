@@ -30,7 +30,7 @@
                 android:paddingTop="2dp"
                 android:paddingRight="2dp"
                 android:paddingBottom="2dp"
-                android:scaleX="0.8"
+                android:scaleX="0.7"
                 android:scaleY="0.7" />
 
             <TextView
@@ -69,7 +69,7 @@
                 android:paddingTop="2dp"
                 android:paddingRight="2dp"
                 android:paddingBottom="2dp"
-                android:scaleX="0.8"
+                android:scaleX="0.7"
                 android:scaleY="0.7" />
 
         </LinearLayout>

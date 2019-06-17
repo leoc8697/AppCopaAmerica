@@ -58,10 +58,12 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
         holder.pts2.setText(table.getPts2());
         holder.pts3.setText(table.getPts3());
         holder.pts4.setText(table.getPts4());
+        /*
         holder.imgPos1.setImageResource(table.getImgPos1());
         holder.imgPos2.setImageResource(table.getImgPos2());
         holder.imgPos3.setImageResource(table.getImgPos3());
         holder.imgPos4.setImageResource(table.getImgPos4());
+        */
     }
 
     @Override
