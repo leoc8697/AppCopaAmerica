@@ -17,20 +17,20 @@ public class GsonMatchParser {
         Gson gson = new Gson();
 
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
-        List<MatchModel> animales = new ArrayList<>();
+        List<MatchModel> matches = new ArrayList<>();
 
         // Iniciar el array
         reader.beginArray();
 
         while (reader.hasNext()) {
             // Lectura de objetos
-            MatchModel animal = gson.fromJson(reader, MatchModel.class);
-            animales.add(animal);
+            MatchModel match = gson.fromJson(reader, MatchModel.class);
+            matches.add(match);
         }
 
 
         reader.endArray();
         reader.close();
-        return animales;
+        return matches;
     }
 }

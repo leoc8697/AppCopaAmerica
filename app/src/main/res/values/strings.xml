@@ -5,4 +5,5 @@
     <string name="teams">Equipos</string>
     <string name="info">  Pos.                                           PJ        Gol       Dif.       Pts</string>
     <string name="infoGroup">  Pos.        PJ  Gol  Dif.      Pts</string>
+    <string name="ConnectionError">Error de conexión</string>
 </resources>

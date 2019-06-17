@@ -1,10 +1,14 @@
 package com.example.appcopaamerica;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +17,25 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.support.constraint.Constraints.TAG;
+
 public class CalendarFragment extends Fragment {
 
-    ListView lista;
-    ArrayAdapter adaptador;
-    HttpURLConnection con;
+
+    // Required empty public constructor
+    ArrayList<MatchModel> matchesList = new ArrayList<>();
+    MatchAdapterRecyclerView adapterMatch;
 
     public CalendarFragment(){
-        // Required empty public constructor
     }
 
     @Override
@@ -41,11 +50,40 @@ public class CalendarFragment extends Fragment {
 
         recyclerViewMatch.setLayoutManager(linearLayoutManager);
 
+        getMatchParsed();
+
+
+
         //Aquí asignamos toda la info de nuestro recycler view en nuestro layout
-        MatchAdapterRecyclerView adapterMatch= new MatchAdapterRecyclerView(getMatchs(), R.layout.item_match, getActivity());
+        adapterMatch = new MatchAdapterRecyclerView(matchesList, R.layout.item_match, getActivity());
         recyclerViewMatch.setAdapter(adapterMatch);
 
+
+
         return view;
+
+                /*
+        Comprobar la disponibilidad de la Red
+         */
+/*
+
+        try {
+            ConnectivityManager connMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+            if (networkInfo != null && networkInfo.isConnected()) {
+                new JsonTask().
+                        execute(
+                                new URL("https://api.myjson.com/bins/174105"));
+            } else {
+                Toast.makeText(getActivity(), getString(R.string.ConnectionError), Toast.LENGTH_LONG).show();
+            }
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        */
     }
 
     public ArrayList<MatchModel> getMatchs(){
@@ -58,66 +96,66 @@ public class CalendarFragment extends Fragment {
         return matches;
     }
 
+private void getMatchParsed()
 
-    public class JsonTask extends AsyncTask<URL, Void, List<MatchModel>> {
+    {
+        class JsonTask extends AsyncTask<URL, Void, ArrayList<MatchModel>> {
+
+            @Override
+            protected ArrayList<MatchModel> doInBackground(URL... urls) {
+                ArrayList<MatchModel> matches = null;
+
+                try {
+                    URL url = new URL("https://api.myjson.com/bins/1eqw2d");
+                    // Create a new HTTP URL connection
+                    URLConnection connection = url.openConnection();
+                    HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                    int responseCode = httpConnection.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        InputStream in = httpConnection.getInputStream();
+
+                        // Parsear el flujo con formato JSON
+                        GsonMatchParser parser = new GsonMatchParser();
+                        matches = (ArrayList<MatchModel>) parser.readFlowJson(in);
+                    }
+                    else{
+                        matches = new ArrayList<>();
+                        matches.add(new MatchModel(null, null, null, null));
+                    }
+                    httpConnection.disconnect();
+                } catch (MalformedURLException e) {
+                    Log.e(TAG, "Malformed URL Exception.", e);
+                } catch (IOException e) {
+                    Log.e(TAG, "IO Exception.", e);
+                }
+             return matches;
+            }
 
         @Override
-        protected List<MatchModel> doInBackground(URL... urls) {
-            List<MatchModel> matches = null;
+        protected void onPostExecute(ArrayList<MatchModel> matches) {
 
-            try {
+            super.onPostExecute(matches);
+            if(matches!=null) {
+                matchesList.clear();
 
-                // Establecer la conexión
-                con = (HttpURLConnection)urls[0].openConnection();
-                con.setConnectTimeout(15000);
-                con.setReadTimeout(10000);
-
-                // Obtener el estado del recurso
-                int statusCode = con.getResponseCode();
-
-                if(statusCode!=200) {
-                    matches = new ArrayList<>();
-                    matches.add(new MatchModel(null,null,null, null));
-
-                } else {
-
-                    // Parsear el flujo con formato JSON
-                    InputStream in = new BufferedInputStream(con.getInputStream());
-
-                    // JsonAnimalParser parser = new JsonAnimalParser();
-                    GsonMatchParser parser = new GsonMatchParser();
-
-                    matches = parser.readFlowJson(in);
-
+                for (int i = 0; i < matches.size(); i++) {
+                    matchesList.add(matches.get(i));
 
                 }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }finally {
-                con.disconnect();
+                adapterMatch.notifyDataSetChanged();
             }
-            return matches;
-        }
-
-        @Override
-        protected void onPostExecute(List<MatchModel> animales) {
-            /*
-            Asignar los objetos de Json parseados al adaptador
-             */
-            if(animales!=null) {
-                adaptador = new MatchesAdapter((MainActivity) getContext(), animales);
-                lista.setAdapter(adaptador);
-            }else{
-                Toast.makeText(
-                        getContext(),
+            else{
+                Toast.makeText((MainActivity) getContext(),
                         "Ocurrió un error de Parsing Json",
                         Toast.LENGTH_SHORT)
                         .show();
             }
+        }
 
         }
+
+        JsonTask jsonTask = new JsonTask();
+        jsonTask.execute();
     }
 
 }

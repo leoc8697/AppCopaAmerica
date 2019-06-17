@@ -8,9 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Creado por Hermosa Programación.
- */
+
 public class JsonMatchParser {
 
 

@@ -38,8 +38,8 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
         holder.team2.setText(match.getTeam2());
         holder.score.setText(match.getScore());
         holder.dateMatch.setText(match.getDateMatch());
-        holder.flagTeam1.setImageResource(match.getFlagTeam1());
-        holder.flagTeam2.setImageResource(match.getFlagTeam2());
+        //holder.flagTeam1.setImageResource(match.getFlagTeam1());
+        //holder.flagTeam2.setImageResource(match.getFlagTeam2());
     }
 
     //El siguiente metodo permita configurar al adaptador la cantidad de elementos que se procesarán.
@@ -53,7 +53,7 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
     public class MatchViewHolder extends RecyclerView.ViewHolder{
 
         private TextView team1, team2, score, dateMatch;
-        ImageView flagTeam1,flagTeam2;
+        //ImageView flagTeam1,flagTeam2;
 
         public MatchViewHolder(View itemView) {
             super(itemView);
@@ -62,8 +62,8 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
             team2     = (TextView)  itemView.findViewById(R.id.textTeam2);
             score     = (TextView)  itemView.findViewById(R.id.textScore);
             dateMatch = (TextView)  itemView.findViewById(R.id.textDateMatch);
-            flagTeam1 = (ImageView) itemView.findViewById(R.id.imgTeam1);
-            flagTeam2 = (ImageView) itemView.findViewById(R.id.imgTeam2);
+            //flagTeam1 = (ImageView) itemView.findViewById(R.id.imgTeam1);
+            //flagTeam2 = (ImageView) itemView.findViewById(R.id.imgTeam2);
         }
     }
 }
