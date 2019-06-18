@@ -2,12 +2,14 @@ package com.example.appcopaamerica;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -41,8 +43,8 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
 
     //El metodo onBindViewHolder realiza las verificaciones del contenido para cada item.
     @Override
-    public void onBindViewHolder(MatchViewHolder holder, int position) {
-        MatchModel match = matches.get(position);
+    public void onBindViewHolder(final MatchViewHolder holder, int position) {
+        final MatchModel match = matches.get(position);
         holder.team1.setText(match.getTeam1());
         holder.team2.setText(match.getTeam2());
         holder.score.setText(match.getScore());
@@ -51,6 +53,14 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
                 .into((holder.flagTeam1));
         Picasso.with(context).load(matches.get(position).getFlagTeam2())
                 .into((holder.flagTeam2));
+        holder.team1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                MatchModelDb task = new MatchModelDb(match.getTeam1() ,match.getTeam2(),match.getScore(),match.getDateMatch(),
+                        match.getFlagTeam1(),match.getFlagTeam2());
+                saveTask(task);
+                Toast.makeText(context,holder.team1.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -113,4 +123,38 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
         }
 
     } */
+
+    private void saveTask(final MatchModelDb task) {
+        class SaveTask extends AsyncTask<Void, Void, Void> {
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                //adding to database
+                MatchItemDatabaseAccesor.getInstance(context).MatchItemDAO().insertMatchItem(task);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+
+
+                Toast.makeText(context,
+                        "guardando en base de datos",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                /*getTasks();
+                Toast.makeText(context,
+                        dbMatchItems.get(1).getFlagTeam1(),
+                        Toast.LENGTH_SHORT)
+                        .show();  */
+
+
+
+            }
+        }
+
+        SaveTask saveTask = new SaveTask();
+        saveTask.execute();
+    }
 }
