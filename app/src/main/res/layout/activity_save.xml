@@ -67,17 +67,20 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" />
         </android.support.v7.widget.CardView>
+
+
+        <ListView
+            android:id="@+id/lvItems"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:divider="#000"
+            android:dividerHeight="1dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="56dp" />
     </LinearLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="#0C0101"
-        app:srcCompat="@drawable/code_qr"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="556dp" />
+
+
 
 </android.support.constraint.ConstraintLayout>

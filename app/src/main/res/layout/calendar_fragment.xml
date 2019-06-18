@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
@@ -24,12 +25,20 @@
 
         </android.support.v7.widget.RecyclerView>
 
-        <include layout="@layout/item_match"/>
-        <include layout="@layout/item_match"/>
-
-
 
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/boSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="#272525"
+        app:srcCompat="@android:drawable/stat_sys_download_done"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="556dp" />
 
 
 </android.support.design.widget.CoordinatorLayout>

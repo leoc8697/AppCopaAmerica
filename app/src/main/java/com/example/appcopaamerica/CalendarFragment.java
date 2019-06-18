@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,8 +40,22 @@ public class CalendarFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.calendar_fragment, container, false);
+
+        FloatingActionButton fab = view.findViewById(R.id.boSave);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),
+                        "aquí va la inflación",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                Intent intent = new Intent(getActivity(),SaveActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         //Vinculamos nuestra instancia recycler view
         RecyclerView recyclerViewMatch = (RecyclerView) view.findViewById(R.id.recyclerMatch);
