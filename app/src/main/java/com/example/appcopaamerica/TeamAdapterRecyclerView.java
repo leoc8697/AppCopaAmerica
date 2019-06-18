@@ -2,6 +2,8 @@ package com.example.appcopaamerica;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +43,15 @@ public class TeamAdapterRecyclerView extends RecyclerView.Adapter<TeamAdapterRec
 
         Picasso.with(context).load(teams.get(position).getFlagTeam())
                 .into((holder.flagTeam));
+
+        holder.teamCard.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(activity, TeamActivity.class);
+                activity.startActivity(intent);
+            }
+        }
+        );
     }
 
     @Override
@@ -53,12 +64,14 @@ public class TeamAdapterRecyclerView extends RecyclerView.Adapter<TeamAdapterRec
 
         private TextView nameTeam;
         ImageView flagTeam;
+        CardView teamCard;
 
         public TeamViewHolder(View itemView) {
             super(itemView);
 
             nameTeam = (TextView)  itemView.findViewById(R.id.textTeam);
             flagTeam = (ImageView) itemView.findViewById(R.id.imgTeam);
+            teamCard = (CardView)  itemView.findViewById(R.id.teamCard);
         }
     }
 
