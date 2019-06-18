@@ -55,10 +55,7 @@ public class CalendarFragment extends Fragment {
         adapterMatch = new MatchAdapterRecyclerView(matchesList, R.layout.item_match, getActivity(), getActivity().getApplicationContext());
         recyclerViewMatch.setAdapter(adapterMatch);
 
-
-
         return view;
-
     }
 /*
     public ArrayList<MatchModel> getMatchs(){

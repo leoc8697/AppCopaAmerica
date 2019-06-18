@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textDateMatch"
+            android:id="@+id/textTeam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBarDateMatch"
@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imgTeam1"
+                android:id="@+id/imgTeam"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

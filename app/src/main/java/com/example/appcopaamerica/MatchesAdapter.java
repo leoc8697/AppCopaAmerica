@@ -1,7 +1,6 @@
 package com.example.appcopaamerica;
 
 import android.content.Context;
-import android.service.autofill.FieldClassification;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +38,7 @@ public class MatchesAdapter extends ArrayAdapter {
         TextView team1 = (TextView)v.findViewById(R.id.textTeam1);
         TextView team2 = (TextView)v.findViewById(R.id.textTeam2);
         TextView score = (TextView)v.findViewById(R.id.textScore);
-        TextView dateMatch = (TextView)v.findViewById(R.id.textDateMatch);
+        TextView dateMatch = (TextView)v.findViewById(R.id.textTeam);
         //ImageView imagenAnimal = (ImageView)v.findViewById(R.id.imagenAnimal);
 
 

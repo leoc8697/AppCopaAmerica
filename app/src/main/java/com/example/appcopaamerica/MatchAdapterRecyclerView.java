@@ -71,8 +71,8 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
             team1     = (TextView)  itemView.findViewById(R.id.textTeam1);
             team2     = (TextView)  itemView.findViewById(R.id.textTeam2);
             score     = (TextView)  itemView.findViewById(R.id.textScore);
-            dateMatch = (TextView)  itemView.findViewById(R.id.textDateMatch);
-            flagTeam1 = (ImageView) itemView.findViewById(R.id.imgTeam1);
+            dateMatch = (TextView)  itemView.findViewById(R.id.textTeam);
+            flagTeam1 = (ImageView) itemView.findViewById(R.id.imgTeam);
             flagTeam2 = (ImageView) itemView.findViewById(R.id.imgTeam2);
         }
     }
