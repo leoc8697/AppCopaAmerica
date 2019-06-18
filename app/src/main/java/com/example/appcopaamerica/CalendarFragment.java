@@ -31,8 +31,6 @@ import static android.support.constraint.Constraints.TAG;
 public class CalendarFragment extends Fragment {
 
 
-
-    // Required empty public constructor
     ArrayList<MatchModel> matchesList = new ArrayList<>();
     MatchAdapterRecyclerView adapterMatch;
 
@@ -53,8 +51,6 @@ public class CalendarFragment extends Fragment {
 
         getMatchParsed();
 
-
-
         //Aquí asignamos toda la info de nuestro recycler view en nuestro layout
         adapterMatch = new MatchAdapterRecyclerView(matchesList, R.layout.item_match, getActivity(), getActivity().getApplicationContext());
         recyclerViewMatch.setAdapter(adapterMatch);
@@ -63,28 +59,6 @@ public class CalendarFragment extends Fragment {
 
         return view;
 
-                /*
-        Comprobar la disponibilidad de la Red
-         */
-/*
-
-        try {
-            ConnectivityManager connMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-            NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-            if (networkInfo != null && networkInfo.isConnected()) {
-                new JsonTask().
-                        execute(
-                                new URL("https://api.myjson.com/bins/174105"));
-            } else {
-                Toast.makeText(getActivity(), getString(R.string.ConnectionError), Toast.LENGTH_LONG).show();
-            }
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        */
     }
 /*
     public ArrayList<MatchModel> getMatchs(){
@@ -111,7 +85,7 @@ private void getMatchParsed()
                     //URL Json only text.
                     //URL url = new URL("https://api.myjson.com/bins/1eqw2d");
                     //URL Json text and images.
-                    URL url = new URL("https://api.myjson.com/bins/jgmjh");
+                    URL url = new URL("https://api.myjson.com/bins/75tyd");
                     // Create a new HTTP URL connection
                     URLConnection connection = url.openConnection();
                     HttpURLConnection httpConnection = (HttpURLConnection) connection;

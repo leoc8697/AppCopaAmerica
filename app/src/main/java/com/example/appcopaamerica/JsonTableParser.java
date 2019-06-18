@@ -67,6 +67,10 @@ public class JsonTableParser {
         String pts2 = null;
         String pts3 = null;
         String pts4 = null;
+        String imgPos1 = null;
+        String imgPos2 = null;
+        String imgPos3 = null;
+        String imgPos4 = null;
 
         // Iniciar objeto
         reader.beginObject();
@@ -152,6 +156,18 @@ public class JsonTableParser {
                 case "pts4":
                     pts4 = reader.nextString();
                     break;
+                case "imgPos1":
+                    imgPos1 = reader.nextString();
+                    break;
+                case "imgPos2":
+                    imgPos2 = reader.nextString();
+                    break;
+                case "imgPos3":
+                    imgPos3 = reader.nextString();
+                    break;
+                case "imgPos4":
+                    imgPos4 = reader.nextString();
+                    break;
                 default:
                     reader.skipValue();
                     break;
@@ -160,7 +176,7 @@ public class JsonTableParser {
         reader.endObject();
         return new TableModel(nameGroup, position1, position2,position3, position4, namePosition1, namePosition2, namePosition3,
                 namePosition4, pj1, pj2, pj3, pj4, goals1, goals2, goals3, goals4, difGoal1, difGoal2, difGoal3, difGoal4,
-                pts1, pts2, pts3, pts4);// int imgPos1, int imgPos2, int imgPos3, int imgPos4) {
+                pts1, pts2, pts3, pts4, imgPos1, imgPos2, imgPos3, imgPos4);
 
     }
 

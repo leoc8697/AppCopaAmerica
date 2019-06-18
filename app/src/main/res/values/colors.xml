@@ -7,8 +7,8 @@
     <color name="colorButtonsToolbar">#04043A</color>
     <color name="colorButtonsSecondToolbar">#000007</color>
     <color name="colorTextBarItems">#F0F7E811</color>
-    <color name="colorBarDateMatch">#B0041601</color>
-    <color name="colorBarGroup">#AE084201</color>
-    <color name="colorBarInfoGroup">#C01D2E1A</color>
+    <color name="colorBarDateMatch">#E7041601</color>
+    <color name="colorBarGroup">#D2020E00</color>
+    <color name="colorBarInfoGroup">#C00A3A03</color>
 
 </resources>

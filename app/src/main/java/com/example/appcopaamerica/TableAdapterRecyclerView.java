@@ -1,12 +1,15 @@
 package com.example.appcopaamerica;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -15,11 +18,13 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
     private ArrayList<TableModel> tables;
     private int resource;
     private Activity activity;
+    private Context context;
 
-    public TableAdapterRecyclerView(ArrayList<TableModel> tables, int resource, Activity activity) {
+    public TableAdapterRecyclerView(ArrayList<TableModel> tables, int resource, Activity activity, Context context) {
         this.tables = tables;
         this.resource = resource;
         this.activity = activity;
+        this.context = context;
     }
 
     @Override
@@ -33,7 +38,6 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
     public void onBindViewHolder(TableViewHolder holder, int position) {
         TableModel table = tables.get(position);
         holder.nameGroup.setText(table.getNameGroup());
-        //holder.infoGroup.setText(table.getInfoGroup());
         holder.position1.setText(table.getPosition1());
         holder.position2.setText(table.getPosition2());
         holder.position3.setText(table.getPosition3());
@@ -58,12 +62,14 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
         holder.pts2.setText(table.getPts2());
         holder.pts3.setText(table.getPts3());
         holder.pts4.setText(table.getPts4());
-        /*
-        holder.imgPos1.setImageResource(table.getImgPos1());
-        holder.imgPos2.setImageResource(table.getImgPos2());
-        holder.imgPos3.setImageResource(table.getImgPos3());
-        holder.imgPos4.setImageResource(table.getImgPos4());
-        */
+        Picasso.with(context).load(tables.get(position).getImgPos1())
+                .into((holder.imgPos1));
+        Picasso.with(context).load(tables.get(position).getImgPos2())
+                .into((holder.imgPos2));
+        Picasso.with(context).load(tables.get(position).getImgPos3())
+                .into((holder.imgPos3));
+        Picasso.with(context).load(tables.get(position).getImgPos4())
+                .into((holder.imgPos4));
     }
 
     @Override
@@ -83,7 +89,6 @@ public class TableAdapterRecyclerView extends RecyclerView.Adapter<TableAdapterR
             super(itemView);
 
             nameGroup     = (TextView)  itemView.findViewById(R.id.textGroup);
-            //infoGroup     = (TextView)  itemView.findViewById(R.id.textInfoGroup);
             position1     = (TextView)  itemView.findViewById(R.id.textPos1);
             position2     = (TextView)  itemView.findViewById(R.id.textPos2);
             position3     = (TextView)  itemView.findViewById(R.id.textPos3);

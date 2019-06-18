@@ -11,10 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.security.AccessController;
 import java.util.ArrayList;
-
-import static java.security.AccessController.getContext;
 
 
 public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterRecyclerView.MatchViewHolder> {
@@ -24,13 +21,11 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
     private Activity activity;
     private  Context context;
 
-
-
     public MatchAdapterRecyclerView(ArrayList<MatchModel> matches, int resource, Activity activity, Context context) {
         this.matches = matches;
-        this.context = context;
         this.resource = resource;
         this.activity = activity;
+        this.context = context;
     }
 
     @Override
