@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterRecyclerView.MatchViewHolder> {
 
+    //EventoOnItemClick listener;
+
     private ArrayList<MatchModel> matches;
     private int resource;
     private Activity activity;
@@ -76,4 +78,39 @@ public class MatchAdapterRecyclerView extends RecyclerView.Adapter<MatchAdapterR
             flagTeam2 = (ImageView) itemView.findViewById(R.id.imgTeam2);
         }
     }
+/*
+    public interface EventoOnItemClick {
+        public void onItemClick(int posicion);
+    }
+
+    public void setOnClickListener(EventoOnItemClick listener){
+        this.listener=listener;
+    }
+
+    public class ItemMenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        EventoOnItemClick listener; // Recibe la interfaz enviada desde el adaptador
+        int posicion; // Recibe la posicion enviada desde le adaptador
+
+        public ItemMenuViewHolder(View itemView, EventoOnItemClick listener) {
+            super(itemView);
+
+            // Apuntas el evento onClick del item al metodo onClick
+            // de la interfaz OnClickListener.
+            itemView.setOnClickListener(this);
+
+            // Inicializas el listener
+            this.listener = listener;
+        }
+
+        public void setPosicion(int posicion) {
+            this.posicion = posicion; // Inicializa la posicion
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onItemClick(posicion);
+        }
+
+    } */
 }

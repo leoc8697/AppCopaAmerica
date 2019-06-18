@@ -6,4 +6,5 @@
     <string name="info">  Pos.                                           PJ        Gol       Dif.       Pts</string>
     <string name="infoGroup">  Pos.        PJ  Gol  Dif.      Pts</string>
     <string name="ConnectionError">Error de conexión</string>
+    <string name="title_activity_team">TeamActivity</string>
 </resources>

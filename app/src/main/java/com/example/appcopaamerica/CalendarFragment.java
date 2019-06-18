@@ -1,6 +1,8 @@
 package com.example.appcopaamerica;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -29,7 +31,6 @@ import java.util.List;
 import static android.support.constraint.Constraints.TAG;
 
 public class CalendarFragment extends Fragment {
-
 
     ArrayList<MatchModel> matchesList = new ArrayList<>();
     MatchAdapterRecyclerView adapterMatch;
@@ -82,7 +83,7 @@ private void getMatchParsed()
                     //URL Json only text.
                     //URL url = new URL("https://api.myjson.com/bins/1eqw2d");
                     //URL Json text and images.
-                    URL url = new URL("https://api.myjson.com/bins/75tyd");
+                    URL url = new URL("https://api.myjson.com/bins/gaenp");
                     // Create a new HTTP URL connection
                     URLConnection connection = url.openConnection();
                     HttpURLConnection httpConnection = (HttpURLConnection) connection;

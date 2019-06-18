@@ -2,32 +2,36 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="8dp"
     android:background="@drawable/degrade"
     tools:context=".CalendarFragment">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ScrollView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerMatch"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="true"
+            android:scrollbars="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerMatch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fadeScrollbars="true"
-                android:scrollbars="vertical">
+        </android.support.v7.widget.RecyclerView>
 
-            </android.support.v7.widget.RecyclerView>
-        </ScrollView>
+        <include layout="@layout/item_match"/>
+        <include layout="@layout/item_match"/>
+
+
 
     </LinearLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>
+
+
